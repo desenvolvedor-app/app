@@ -21,7 +21,15 @@ import {
     TooltipTrigger,
 } from '@/components/ui/tooltip';
 
-const FeatureCard = ({ icon: Icon, title, description }) => (
+const FeatureCard = ({
+    icon: Icon,
+    title,
+    description,
+}: {
+    icon: React.ElementType;
+    title: string;
+    description: string;
+}) => (
     <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
         <Icon className="w-10 h-10 text-blue-400 mb-4" />
         <h3 className="text-lg font-semibold mb-2">{title}</h3>
@@ -29,7 +37,13 @@ const FeatureCard = ({ icon: Icon, title, description }) => (
     </div>
 );
 
-const ContributionStep = ({ icon: Icon, title }) => (
+const ContributionStep = ({
+    icon: Icon,
+    title,
+}: {
+    icon: React.ElementType;
+    title: string;
+}) => (
     <div className="flex items-center space-x-2">
         <Icon className="w-6 h-6 text-green-400" />
         <span className="text-gray-300">{title}</span>
@@ -40,7 +54,7 @@ export default function Home() {
     const [email, setEmail] = useState('');
     const { toast } = useToast();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         toast({
             title: 'Inscrição realizada com sucesso!',
