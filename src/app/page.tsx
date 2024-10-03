@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-    Github,
     Code,
     Users,
     Lightbulb,
@@ -11,6 +10,9 @@ import {
     GitPullRequest,
     MessageSquare,
 } from 'lucide-react';
+
+import { FaGithub, FaRedditAlien, FaDiscord } from 'react-icons/fa';
+
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -79,11 +81,12 @@ export default function Home() {
                         <span className="text-purple-400">app</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-300 mb-4">
-                        A plataforma colaborativa para desenvolvedores do Brasil
+                        A plataforma colaborativa para desenvolvedores de todo o
+                        país
                     </p>
                     <p className="text-lg text-gray-400">
-                        Junte-se a nós e participe da construção do futuro do
-                        desenvolvimento de software no Brasil
+                        Junte-se a nós e participe da construção do futuro da
+                        tecnologia
                     </p>
                 </motion.div>
 
@@ -166,23 +169,55 @@ export default function Home() {
                     className="text-gray-400 text-center"
                 >
                     <p className="mb-4 text-lg">
-                        Estamos juntos, construindo o futuro do desenvolvimento
-                        de software no Brasil.
+                        Estamos juntos, impulsionando o desenvolvimento de
+                        software no Brasil.
                     </p>
                     <div className="flex justify-center space-x-6">
                         <Tooltip>
                             <TooltipTrigger>
                                 <a
-                                    href="https://github.com/desenvolvedor-app/plataforma"
+                                    href="https://github.com/desenvolvedor-app/app"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-gray-300 hover:text-white transition-colors"
                                 >
-                                    <Github size={28} />
+                                    <FaGithub size={28} />
                                 </a>
                             </TooltipTrigger>
                             <TooltipContent>
                                 <p>Contribua no GitHub</p>
+                            </TooltipContent>
+                        </Tooltip>
+
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <a
+                                    href="https://www.reddit.com/r/desenvolvedorapp"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-300 hover:text-white transition-colors"
+                                >
+                                    <FaRedditAlien size={28} />
+                                </a>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>Participe no Reddit</p>
+                            </TooltipContent>
+                        </Tooltip>
+
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <a
+                                    href="https://discord.gg/dty49FVS"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-300 hover:text-white transition-colors"
+                                >
+                                    <FaDiscord size={28} />
+                                </a>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>Junte-se no Discord</p>
                             </TooltipContent>
                         </Tooltip>
                     </div>
