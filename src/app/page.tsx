@@ -11,7 +11,7 @@ import {
     MessageSquare,
 } from 'lucide-react';
 
-import { FaGithub, FaRedditAlien, FaDiscord } from 'react-icons/fa';
+import { FaGithub, FaDiscord } from 'react-icons/fa';
 
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -186,22 +186,6 @@ export default function Home() {
                             </TooltipTrigger>
                             <TooltipContent>
                                 <p>Contribua no GitHub</p>
-                            </TooltipContent>
-                        </Tooltip>
-
-                        <Tooltip>
-                            <TooltipTrigger>
-                                <a
-                                    href="https://www.reddit.com/r/desenvolvedorapp"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-gray-300 hover:text-white transition-colors"
-                                >
-                                    <FaRedditAlien size={28} />
-                                </a>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Participe no Reddit</p>
                             </TooltipContent>
                         </Tooltip>
 
