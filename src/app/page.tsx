@@ -22,6 +22,7 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { addEmailFollowUp } from '@/lib/email.service';
 
 const FeatureCard = ({
     icon: Icon,
@@ -56,13 +57,17 @@ export default function Home() {
     const [email, setEmail] = useState('');
     const { toast } = useToast();
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        await addEmailFollowUp(email);
+
         toast({
             title: 'Inscrição realizada com sucesso!',
             description:
                 'Ficamos felizes em ter você na comunidade desenvolvedor.app',
         });
+
         setEmail('');
     };
 
